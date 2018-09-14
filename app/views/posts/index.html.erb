@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col s6 offset-s2">
+    <% @posts.each do |post| %>
+      <div class="card horizontal">
+        <div class="card-image">
+          <%= image_tag post.image %>
+        </div>
+        <div class="card-content">
+          <div class="post-title">
+            <p><%= link_to post.title, post_path(post) %></p>
+          </div>
+          <div class="future-date">
+            <p class="blue-text darken-1"><%= post.future_date %></p>
+          </div>
+          <div class="nickname">
+            <p class="grey-text"><%= post.user.nickname %></p>
+          </div>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <div class="card-links">
+              <ul class="card-links-ul">
+                <li><%= link_to edit_post_path(post) do %><%= icon('fas', 'edit', class: "grey-text") %><% end %></li>
+                <li><%= link_to "posts/#{post.id}", method: :delete do %><%= icon('fas', 'trash-alt', class: "grey-text") %><% end %></li>
+              </ul>
+            </div>
+          <% end%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

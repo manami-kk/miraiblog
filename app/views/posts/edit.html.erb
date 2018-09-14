@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="input-field col s8 offset-s2">
+    <%= form_for(@post) do |f| %>
+      <%= f.text_field :title, cals: "1", id: "textarea1", class: "materialize-textarea", placeholder: "title" %>
+      <%= f.date_field :future_date, class: "datepicker" %>
+      <%= f.text_area :text, cals: "1", id: "textarea1", class: "materialize-textarea", placeholder: "what is going on?" %>
+      <div class="image-select">
+        <%= f.button class: "btn waves-effect waves-light pink darken-1" do %>
+          <%= icon('fas', 'image') %>
+        <% end%>
+        <%= f.file_field :image %>
+      </div>
+      <div class="submit-btn">
+      <%= f.button :submit, class: "btn waves-effect waves-light pink darken-1" do %>
+        <%= icon('fas', 'paper-plane') %>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

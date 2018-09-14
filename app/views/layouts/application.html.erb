@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>miraiblog</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="left">
+          <%= link_to root_path do %><%= icon('fas', 'book-open') %><p class="brand-logo">mirai-blog</p><% end %>
+        </div>
+        <ul class="right hide-on-med-and-down">
+          <% if user_signed_in?%>
+            <li><p class="hello"><%= "Hello #{current_user.nickname} :)" %></p></li>
+            <li><%= link_to new_post_path do %><%= icon('fas','pencil-alt') %><% end %></li>
+            <li><%= link_to destroy_user_session_path, method: :delete do %><%= icon('fas', 'sign-out-alt') %><% end %></li>
+          <% else %>
+              <%= link_to new_user_session_path do %><%= icon('fas', 'sign-in-alt') %><% end %>
+          <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+@import "./reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "materialize/components/color";
+$primary-color: color("pink", "lighten-1") !default;
+$secondary-color: color("pink", "lighten-2") !default;
+$input-focus-color: $secondary-color !default;
+$link-color: color("pink", "lighten-2") !default;
+@import 'materialize';
+
+nav {
+  padding: 0 80px;
+}
+
+.image-select {
+  margin-bottom: 20px;
+}
+
+.post-title {
+  margin-bottom: 10px;
+  & > p {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.post-text {
+  margin-bottom: 10px;
+  max-height: 50px;
+}
+
+.card-content {
+  width: 450px;
+  position: relative;
+}
+
+.card-links {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  &-ul {
+    display: flex;
+    >li {
+      padding: 0 5px;
+    }
+  }
+}
+
+.hello {
+  font-size: 20px;
+}
