@@ -2,8 +2,8 @@
   <div class="input-field col s8 offset-s2">
     <%= form_for(@post) do |f| %>
       <%= f.text_field :title, cals: "1", id: "textarea1", class: "materialize-textarea", placeholder: "title" %>
-      <%= f.date_field :future_date, class: "datepicker" %>
-      <%= f.text_area :text, cals: "1", id: "textarea1", class: "materialize-textarea", placeholder: "what is going on?" %>
+      <%= f.date_field :future_date, class: "datepicker", placeholder: "date" %>
+      <%= f.text_area :text, cals: "1", id: "textarea1", class: "materialize-textarea", placeholder: "Your dream has come true!" %>
       <div class="image-select">
         <%= f.button class: "btn waves-effect waves-light pink darken-1" do %>
           <%= icon('fas', 'image') %>
