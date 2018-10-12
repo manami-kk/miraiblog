@@ -58,3 +58,7 @@ gem 'materialize-sass'
 gem 'font-awesome-sass', '~> 5.3.1'
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :production do
+  gem 'unicorn'
+end
